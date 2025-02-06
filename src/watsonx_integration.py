@@ -6,17 +6,19 @@ from ibm_watson_machine_learning.foundation_models import Model
 from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
 from ibm_watson_machine_learning.foundation_models.utils.enums import DecodingMethods
 import re
+# Library for watsonx.data we will call out to Watsonx.data to grab Milvus vectorized information
 
 load_dotenv()
 
-def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-13b-instruct-v2"):
+# tried "ibm/granite-13b-instruct-v2" as first option
+def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/llama-2-70b-chat"):
     """
     Sends extracted document text and a prompt to Watsonx.ai using the IBM SDK.
 
     Args:
         text_path (Path): Path to the extracted text file.
         prompt (str): The prompt to send to the AI model.
-        model_id (str): WatsonX model ID to use (default: 'ibm/granite-13b-instruct-v2')
+        model_id (str): WatsonX model ID to use (default: 'ibm/ibm/llama-2-70b-chat')
     """
     api_key = os.getenv("WATSONX_API_KEY")
     project_id = os.getenv("WATSONX_PROJECT_ID", "")
@@ -43,9 +45,9 @@ def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-1
 
     params = {
         GenParams.DECODING_METHOD: DecodingMethods.GREEDY,
-        GenParams.MAX_NEW_TOKENS: 2000,
+        GenParams.MAX_NEW_TOKENS: 1000,
         GenParams.MIN_NEW_TOKENS: 50,
-        GenParams.TEMPERATURE: 0.7,
+        GenParams.TEMPERATURE: 0.1,
         GenParams.REPETITION_PENALTY: 1.0
     }
 

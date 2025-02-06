@@ -1,14 +1,12 @@
-
-
-
 from pathlib import Path
 import json
 from docling.document_converter import DocumentConverter
 from docling.datamodel.base_models import InputFormat
 from docling.datamodel.pipeline_options import PdfPipelineOptions, TableFormerMode
 from docling.document_converter import PdfFormatOption
+# Add API call to watsonx.data and have it store the JSON in the Milvus
 
-def extract_content(pdf_path: Path, output_dir: Path) -> dict:
+def extract_content(pdf_path: Path, output_dir: Path) -> dict:# Add API call to watsonx.data and have it store the JSON in the Milvus
    
     """
     Converts a PDF document to JSON and extracts rich text format.

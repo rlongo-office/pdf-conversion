@@ -5,6 +5,7 @@ from src.watsonx_integration import send_to_watsonx
 import json
 import requests
 
+
 @pytest.fixture
 def test_pdf():
     # Using a sample PDF in tests/data directory

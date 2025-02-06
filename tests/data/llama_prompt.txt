@@ -1,0 +1,83 @@
+*******
+You are an expert AI assistant specialized in extracting structured information from financial documents. 
+Your task is to extract all coverages listed under lines of business from the provided text.
+
+You will receive:
+1. A **description of the entity**, explaining what it represents.
+2. A **passage** from a financial document where the entity may be found.
+
+Your response should be **precise and factual**, extracting only the explicitly stated coverages. 
+If no coverage is explicitly mentioned in the passage, return `"NA"`. 
+Do **NOT** infer or assume values based on context—extract **only what is explicitly stated**.
+
+### **Extraction Criteria:**
+- Extract **only** the lines of text that appear **after** the phrase `'SELECT LINES OF BUSINESS'` and **before** the word `'ATTACHMENTS'`.
+- A line of business (coverage) is selected **if and only if** the line **immediately above it** contains a single `'X'`.
+- The `'X'` indicates that the **line of business text directly below it** should be extracted as the selected coverage. 
+- In simple terms: **if you find a line with an 'X', the line of business you need to extract is the very next line immediately following the 'X'**.
+- The line with the `'X'` may contain whitespace, but no other characters are considered valid for selection.
+- **Do NOT extract the line with the `'X'` itself**—only extract the **line of business text that comes directly after it**.
+- Stop extracting at the word `'ATTACHMENTS'` and ignore everything beyond that.
+
+### **Output Format:**
+Return the extracted coverages as an array of JSON objects:
+```json
+[
+  { "extracted_value": "<coverage_1>" },
+  { "extracted_value": "<coverage_2>" },
+  { "extracted_value": "<coverage_3>" }
+]
+If no coverages are found, return:
+[
+  { "extracted_value": "NA" }
+]
+
+Here is the text to process below:
+LINES OF BUSINESS
+
+INDICATE LINES OF BUSINESS
+
+PREMIUM
+
+PREMIUM
+
+PREMIUM
+
+BOILER & MACHINERY
+
+CYBER AND PRIVACY
+
+YACHT
+
+BUSINESS AUTO
+
+FIDUCIARY LIABILITY
+
+X
+Equipment Floater
+
+BUSINESS OWNERS
+
+GARAGE AND DEALERS
+
+X
+COMMERCIAL GENERAL LIABILITY
+
+LIQUOR LIABILITY
+
+COMMERCIAL INLAND MARINE
+
+MOTOR CARRIER
+
+X
+COMMERCIAL PROPERTY
+
+TRUCKERS
+
+X
+CRIME
+
+X
+UMBRELLA
+
+ATTACHMENTS
