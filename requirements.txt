@@ -1,0 +1,9 @@
+docling
+ibm-watsonx-ai
+sentence-transformers
+faiss-cpu
+python-dotenv
+requests
+pytest
+ibm-watson-machine-learning
+langchain
