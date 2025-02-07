@@ -13,7 +13,6 @@ Do **NOT** infer or assume values based on context—extract **only what is expl
 ### **Extraction Criteria:**
 Extraction Criteria:
 - Select each line and only one line after the sign 'X' starting from phrase 'LINES OF BUSINESS' and before the word 'ATTACHMENTS'.
-- Stop extracting at the word 'ATTACHMENTS' and ignore everything beyond that.
 
 ### **Output Format:**
 Return the extracted coverages as an array of JSON objects:

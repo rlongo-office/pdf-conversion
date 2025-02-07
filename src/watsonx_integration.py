@@ -11,14 +11,14 @@ import re
 load_dotenv()
 
 # tried "ibm/granite-13b-instruct-v2" as first option
-def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/llama-2-70b-chat"):
+def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-13b-instruct-v2"):
     """
     Sends extracted document text and a prompt to Watsonx.ai using the IBM SDK.
 
     Args:
         text_path (Path): Path to the extracted text file.
         prompt (str): The prompt to send to the AI model.
-        model_id (str): WatsonX model ID to use (default: 'ibm/ibm/llama-2-70b-chat')
+        model_id (str): WatsonX model ID to use (default: 'ibm/granite-13b-instruct-v2')
     """
     api_key = os.getenv("WATSONX_API_KEY")
     project_id = os.getenv("WATSONX_PROJECT_ID", "")
@@ -27,6 +27,7 @@ def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/llama-2-7
         raise ValueError("Please set the WATSONX_API_KEY environment variable.")
 
     # Load extracted text content
+    print(f"Sending file to WatsonX: {text_path}")
     with open(text_path, 'r', encoding='utf-8') as f:
         text_content = f.read().strip()
     
