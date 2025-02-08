@@ -4,6 +4,11 @@ from pathlib import Path
 from dotenv import load_dotenv
 from convert_text import extract_content
 from watsonx_integration import send_to_watsonx
+import ssl
+import urllib.request
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
 
 def read_prompt_file(prompt_path: Path) -> str:
     """Read prompt from a text file."""
@@ -45,9 +50,12 @@ def main():
         # Step 1: Extract content
         extracted_files = extract_content(pdf_path, output_dir)
         text_path = extracted_files["text_path"]  # Use text output
+
+        print("text_path: ", text_path)
         
         # Step 2: Send to Watsonx.ai
-        send_to_watsonx(text_path, prompt, args.model)
+        response = send_to_watsonx(text_path, prompt, args.model)
+        print("The Final response", response)
     except Exception as e:
         print(f"Error processing document: {e}")
         raise

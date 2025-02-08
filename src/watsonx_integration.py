@@ -11,14 +11,14 @@ import re
 load_dotenv()
 
 # tried "ibm/granite-13b-instruct-v2" as first option
-def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-13b-instruct-v2"):
+def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/llama-2-70b-chat"):
     """
     Sends extracted document text and a prompt to Watsonx.ai using the IBM SDK.
 
     Args:
         text_path (Path): Path to the extracted text file.
         prompt (str): The prompt to send to the AI model.
-        model_id (str): WatsonX model ID to use (default: 'ibm/granite-13b-instruct-v2')
+        model_id (str): WatsonX model ID to use (default: 'ibm/ibm/llama-2-70b-chat')
     """
     api_key = os.getenv("WATSONX_API_KEY")
     project_id = os.getenv("WATSONX_PROJECT_ID", "")
@@ -27,7 +27,6 @@ def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-1
         raise ValueError("Please set the WATSONX_API_KEY environment variable.")
 
     # Load extracted text content
-    print(f"Sending file to WatsonX: {text_path}")
     with open(text_path, 'r', encoding='utf-8') as f:
         text_content = f.read().strip()
     
@@ -41,7 +40,7 @@ def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-1
     prompt_input = f"""Context: The following is extracted text from a document, including tables and lists:\n\n{text_content}\n\nPrompt: {prompt}"""
 
     print("\n===== Final Input to WatsonX =====")
-    print(prompt_input[:1000])  # Print only first 1000 characters for readability
+    print(prompt_input[:1100])  # Print only first 1000 characters for readability
     print("=================================")
 
     params = {
@@ -49,7 +48,7 @@ def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-1
         GenParams.MAX_NEW_TOKENS: 1000,
         GenParams.MIN_NEW_TOKENS: 50,
         GenParams.TEMPERATURE: 0.1,
-        GenParams.REPETITION_PENALTY: 1.0
+        GenParams.REPETITION_PENALTY: 1.2
     }
 
     credentials = {
@@ -66,18 +65,43 @@ def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-1
 
     try:
         response = model.generate(prompt=prompt_input)
+
         
+        
+        
+        
+        print("\n===== AI Response =====")
+        # print(response)
+        # Extract generated text
+        generated_text = response["results"][0]["generated_text"]
+
+        # Extract JSON part
+        start = generated_text.find("[")
+        end = generated_text.rfind("]") + 1
+        # if start != -1 and end != -1:
+        extracted_json = generated_text[start:end]
+        print('Output of the extracted info: ', extracted_json)
+        print("-------------------------------------------------------------------------")
         # Save AI response to a file
         output_dir = Path("output")
         output_dir.mkdir(parents=True, exist_ok=True)
         response_file = output_dir / "watsonx_response.json"
+        # extracted_data = json.loads(extracted_json)
         with open(response_file, "w", encoding="utf-8") as f:
-            json.dump(response, f, indent=2)
-        
-        print("\n===== AI Response =====")
-        print(response)
-        print("=======================")
+            json.dump(extracted_json, f, indent=2)
         print(f"AI response saved to {response_file}")
+        # else:
+        #     print("No JSON output found.")
+        print("=======================")
+
+        # # Save AI response to a file
+        # output_dir = Path("output")
+        # output_dir.mkdir(parents=True, exist_ok=True)
+        # response_file = output_dir / "watsonx_response.json"
+        # # extracted_data = json.loads(extracted_json)
+        # with open(response_file, "w", encoding="utf-8") as f:
+        #     json.dump(extracted_json, f, indent=2)
+        # print(f"AI response saved to {response_file}")
 
         # Extract generated text and clean up JSON
         generated_text = response.get("results", [{}])[0].get("generated_text", "")
@@ -87,24 +111,24 @@ def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/granite-1
         # Save cleaned text for debugging
         debug_text_file = output_dir / "watsonx_cleaned_text.json"
         with open(debug_text_file, "w", encoding="utf-8") as f:
-            f.write(cleaned_text)
+            f.write(extracted_json)
         print(f"Cleaned WatsonX text saved to {debug_text_file}")
         
-        # Fix duplicate keys by converting JSON string to a dictionary list
-        try:
-            json_data = json.loads(cleaned_text)  # Convert text to JSON
-            structured_json = []
-            for entry in json_data:
-                structured_entry = {key: value for key, value in entry.items() if key != "PREMIUM"}
-                structured_entry["PREMIUM"] = entry.get("PREMIUM", "")  # Keep only the last premium value
-                structured_json.append(structured_entry)
+        # # Fix duplicate keys by converting JSON string to a dictionary list
+        # try:
+        #     json_data = json.loads(cleaned_text)  # Convert text to JSON
+        #     structured_json = []
+        #     for entry in json_data:
+        #         structured_entry = {key: value for key, value in entry.items() if key != "PREMIUM"}
+        #         structured_entry["PREMIUM"] = entry.get("PREMIUM", "")  # Keep only the last premium value
+        #         structured_json.append(structured_entry)
             
-            structured_file = output_dir / "watsonx_structured.json"
-            with open(structured_file, "w", encoding="utf-8") as f:
-                json.dump(structured_json, f, indent=2)
-            print(f"Structured JSON saved to {structured_file}")
-        except json.JSONDecodeError as e:
-            print(f"Failed to parse generated text into JSON: {e}")
+        #     structured_file = output_dir / "watsonx_structured.json"
+        #     with open(structured_file, "w", encoding="utf-8") as f:
+        #         json.dump(structured_json, f, indent=2)
+        #     print(f"Structured JSON saved to {structured_file}")
+        # except json.JSONDecodeError as e:
+        #     print(f"Failed to parse generated text into JSON: {e}")
 
         return response
     

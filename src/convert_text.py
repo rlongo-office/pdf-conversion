@@ -4,10 +4,10 @@ from docling.document_converter import DocumentConverter
 from docling.datamodel.base_models import InputFormat
 from docling.datamodel.pipeline_options import PdfPipelineOptions, TableFormerMode
 from docling.document_converter import PdfFormatOption
-
 # Add API call to watsonx.data and have it store the JSON in the Milvus
 
-def extract_content(pdf_path: Path, output_dir: Path) -> dict:
+def extract_content(pdf_path: Path, output_dir: Path) -> dict:# Add API call to watsonx.data and have it store the JSON in the Milvus
+   
     """
     Converts a PDF document to JSON and extracts rich text format.
 
@@ -35,17 +35,24 @@ def extract_content(pdf_path: Path, output_dir: Path) -> dict:
         json.dump(content, f, indent=2)
     print(f"Exported JSON to {json_output}")
 
-    # Clean and Export rich text representation
-    raw_text = result.document.export_to_text()
-    
-    # Clean text: Remove leading/trailing whitespaces from each line and remove blank lines
-    cleaned_text = "\n".join(
-        line.strip() for line in raw_text.splitlines() if line.strip()
-    )
-
+    # # Export rich text representation
+    # text_output = output_dir / f"{pdf_path.stem}_rich_text.txt"
+    # with open(text_output, 'w', encoding='utf-8') as f:
+    #     f.write(result.document.export_to_text())
+    # print(f"Exported Rich Text to {text_output}")
+    # Export rich text representation
     text_output = output_dir / f"{pdf_path.stem}_rich_text.txt"
+
+    # Get the exported text
+    exported_text = result.document.export_to_text()
+
+    # Remove empty lines or lines containing only whitespace and also strip spaces at the end of each line
+    cleaned_text = "\n".join([line.rstrip() for line in exported_text.split("\n") if line.strip()])
+
+    # Write the cleaned text to the file
     with open(text_output, 'w', encoding='utf-8') as f:
         f.write(cleaned_text)
-    print(f"Exported Cleaned Rich Text to {text_output}")
+
+    print(f"Exported Rich Text to {text_output}")
 
     return {"json_path": json_output, "text_path": text_output}  # Return both paths as a dictionary
