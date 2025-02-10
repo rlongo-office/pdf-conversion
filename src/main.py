@@ -3,6 +3,7 @@ import argparse
 from pathlib import Path
 from dotenv import load_dotenv
 from convert_text import extract_content
+from convert import extract_content as extract_json_content
 from watsonx_integration import send_to_watsonx
 import ssl
 import urllib.request
@@ -49,13 +50,14 @@ def main():
     try:
         # Step 1: Extract content
         extracted_files = extract_content(pdf_path, output_dir)
+        # extracted_json_files = extract_json_content(pdf_path,output_dir)
         text_path = extracted_files["text_path"]  # Use text output
 
         print("text_path: ", text_path)
         
         # Step 2: Send to Watsonx.ai
         response = send_to_watsonx(text_path, prompt, args.model)
-        print("The Final response", response)
+        # print("The Final response", response)
     except Exception as e:
         print(f"Error processing document: {e}")
         raise
