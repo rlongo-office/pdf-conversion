@@ -56,7 +56,7 @@ def main():
         print("text_path: ", text_path)
         
         # Step 2: Send to Watsonx.ai
-        response = send_to_watsonx(text_path, prompt, args.model)
+        response = send_to_watsonx(text_path, prompt, "mistralai/mixtral-8x7b-instruct-v01")
         # print("The Final response", response)
     except Exception as e:
         print(f"Error processing document: {e}")

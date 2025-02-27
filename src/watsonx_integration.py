@@ -11,7 +11,7 @@ import re
 load_dotenv()
 
 # tried "ibm/granite-13b-instruct-v2" as first option
-def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "ibm/llama-2-70b-chat"):
+def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "mistralai/mixtral-8x7b-instruct-v01"):
     """
     Sends extracted document text and a prompt to Watsonx.ai using the IBM SDK.
 
