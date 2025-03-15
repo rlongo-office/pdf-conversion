@@ -1,6 +1,6 @@
 {
   "schema_name": "DoclingDocument",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "name": "first_page",
   "origin": {
     "mimetype": "application/pdf",
@@ -10,6 +10,7 @@
   "furniture": {
     "self_ref": "#/furniture",
     "children": [],
+    "content_layer": "furniture",
     "name": "_root_",
     "label": "unspecified"
   },
@@ -29,13 +30,13 @@
         "$ref": "#/texts/3"
       },
       {
+        "$ref": "#/texts/4"
+      },
+      {
+        "$ref": "#/texts/5"
+      },
+      {
         "$ref": "#/groups/0"
-      },
-      {
-        "$ref": "#/texts/151"
-      },
-      {
-        "$ref": "#/texts/152"
       },
       {
         "$ref": "#/texts/153"
@@ -50,6 +51,7 @@
         "$ref": "#/texts/156"
       }
     ],
+    "content_layer": "body",
     "name": "_root_",
     "label": "unspecified"
   },
@@ -60,12 +62,6 @@
         "$ref": "#/body"
       },
       "children": [
-        {
-          "$ref": "#/texts/4"
-        },
-        {
-          "$ref": "#/texts/5"
-        },
         {
           "$ref": "#/texts/6"
         },
@@ -500,8 +496,15 @@
         },
         {
           "$ref": "#/texts/150"
+        },
+        {
+          "$ref": "#/texts/151"
+        },
+        {
+          "$ref": "#/texts/152"
         }
       ],
+      "content_layer": "body",
       "name": "group",
       "label": "form_area"
     }
@@ -513,6 +516,7 @@
         "$ref": "#/pictures/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -539,6 +543,7 @@
         "$ref": "#/body"
       },
       "children": [],
+      "content_layer": "body",
       "label": "section_header",
       "prov": [
         {
@@ -546,8 +551,8 @@
           "bbox": {
             "l": 161.0,
             "t": 759.0,
-            "r": 441.6666564941406,
-            "b": 744.3333129882812,
+            "r": 441.6666666666667,
+            "b": 744.3333333333334,
             "coord_origin": "BOTTOMLEFT"
           },
           "charspan": [
@@ -566,15 +571,70 @@
         "$ref": "#/body"
       },
       "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 555.3333333333334,
+            "t": 766.6666666666666,
+            "r": 596.0,
+            "b": 756.6666666666666,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            6
+          ]
+        }
+      ],
+      "orig": "JMAHON",
+      "text": "JMAHON"
+    },
+    {
+      "self_ref": "#/texts/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 520.6666666666666,
+            "t": 751.3333333333334,
+            "r": 581.3333333333334,
+            "b": 743.3333333333334,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            17
+          ]
+        }
+      ],
+      "orig": "DATE (MMIDDIYYYY)",
+      "text": "DATE (MMIDDIYYYY)"
+    },
+    {
+      "self_ref": "#/texts/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
           "page_no": 1,
           "bbox": {
             "l": 207.0,
-            "t": 742.3333129882812,
-            "r": 391.3333435058594,
-            "b": 731.3333129882812,
+            "t": 742.3333333333334,
+            "r": 391.3333333333333,
+            "b": 731.3333333333334,
             "coord_origin": "BOTTOMLEFT"
           },
           "charspan": [
@@ -587,20 +647,21 @@
       "text": "APPLICANT INFORMATION SECTION"
     },
     {
-      "self_ref": "#/texts/3",
+      "self_ref": "#/texts/5",
       "parent": {
         "$ref": "#/body"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
           "page_no": 1,
           "bbox": {
-            "l": 527.3333129882812,
-            "t": 742.6666870117188,
-            "r": 574.6666870117188,
-            "b": 732.6666870117188,
+            "l": 527.3333333333334,
+            "t": 742.6666666666666,
+            "r": 574.6666666666666,
+            "b": 732.6666666666666,
             "coord_origin": "BOTTOMLEFT"
           },
           "charspan": [
@@ -613,11 +674,12 @@
       "text": "01/04/2024"
     },
     {
-      "self_ref": "#/texts/4",
+      "self_ref": "#/texts/6",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -639,11 +701,12 @@
       "text": "AGENCY"
     },
     {
-      "self_ref": "#/texts/5",
+      "self_ref": "#/texts/7",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -665,11 +728,12 @@
       "text": "CARRIER"
     },
     {
-      "self_ref": "#/texts/6",
+      "self_ref": "#/texts/8",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -691,11 +755,12 @@
       "text": "NAIC CODE"
     },
     {
-      "self_ref": "#/texts/7",
+      "self_ref": "#/texts/9",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -717,11 +782,12 @@
       "text": "Andy Applegate Agency, Inc. 3000 Bradmore Lane Ste 29 Newton,MA 02505"
     },
     {
-      "self_ref": "#/texts/8",
+      "self_ref": "#/texts/10",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -743,11 +809,12 @@
       "text": "NIA"
     },
     {
-      "self_ref": "#/texts/9",
+      "self_ref": "#/texts/11",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -769,11 +836,12 @@
       "text": "COMPANY POLICY OR PROGRAM NAME"
     },
     {
-      "self_ref": "#/texts/10",
+      "self_ref": "#/texts/12",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -795,11 +863,12 @@
       "text": "PROGRAM CODE"
     },
     {
-      "self_ref": "#/texts/11",
+      "self_ref": "#/texts/13",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -821,11 +890,12 @@
       "text": "POLICY NUMBER"
     },
     {
-      "self_ref": "#/texts/12",
+      "self_ref": "#/texts/14",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -847,11 +917,12 @@
       "text": "CONTACT"
     },
     {
-      "self_ref": "#/texts/13",
+      "self_ref": "#/texts/15",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -873,11 +944,12 @@
       "text": "NAME:"
     },
     {
-      "self_ref": "#/texts/14",
+      "self_ref": "#/texts/16",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -899,11 +971,12 @@
       "text": "Andy Applegate"
     },
     {
-      "self_ref": "#/texts/15",
+      "self_ref": "#/texts/17",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -925,11 +998,12 @@
       "text": "UNDERWRITER"
     },
     {
-      "self_ref": "#/texts/16",
+      "self_ref": "#/texts/18",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -951,11 +1025,12 @@
       "text": "UNDERWRITER OFFICE"
     },
     {
-      "self_ref": "#/texts/17",
+      "self_ref": "#/texts/19",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -977,11 +1052,12 @@
       "text": "PHCNo; Ext):"
     },
     {
-      "self_ref": "#/texts/18",
+      "self_ref": "#/texts/20",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1003,11 +1079,12 @@
       "text": "(800) 899-2113"
     },
     {
-      "self_ref": "#/texts/19",
+      "self_ref": "#/texts/21",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1029,11 +1106,12 @@
       "text": "(800) 899-2114"
     },
     {
-      "self_ref": "#/texts/20",
+      "self_ref": "#/texts/22",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "checkbox_unselected",
       "prov": [
         {
@@ -1055,11 +1133,12 @@
       "text": "QUOTE"
     },
     {
-      "self_ref": "#/texts/21",
+      "self_ref": "#/texts/23",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1081,11 +1160,12 @@
       "text": "ISSUE POLICY"
     },
     {
-      "self_ref": "#/texts/22",
+      "self_ref": "#/texts/24",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "checkbox_unselected",
       "prov": [
         {
@@ -1107,11 +1187,12 @@
       "text": "RENEW"
     },
     {
-      "self_ref": "#/texts/23",
+      "self_ref": "#/texts/25",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1133,11 +1214,12 @@
       "text": "andy@applegateagency.com"
     },
     {
-      "self_ref": "#/texts/24",
+      "self_ref": "#/texts/26",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1159,11 +1241,12 @@
       "text": "BOUND (Give Date andlor Attach Copy):"
     },
     {
-      "self_ref": "#/texts/25",
+      "self_ref": "#/texts/27",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1185,11 +1268,12 @@
       "text": "CODE: 8215"
     },
     {
-      "self_ref": "#/texts/26",
+      "self_ref": "#/texts/28",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1211,11 +1295,12 @@
       "text": "SUBCODE:"
     },
     {
-      "self_ref": "#/texts/27",
+      "self_ref": "#/texts/29",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "checkbox_unselected",
       "prov": [
         {
@@ -1237,11 +1322,12 @@
       "text": "CHANGE"
     },
     {
-      "self_ref": "#/texts/28",
+      "self_ref": "#/texts/30",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1263,11 +1349,12 @@
       "text": "DATE"
     },
     {
-      "self_ref": "#/texts/29",
+      "self_ref": "#/texts/31",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1289,11 +1376,12 @@
       "text": "TIME"
     },
     {
-      "self_ref": "#/texts/30",
+      "self_ref": "#/texts/32",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "checkbox_unselected",
       "prov": [
         {
@@ -1315,11 +1403,12 @@
       "text": "AM PM"
     },
     {
-      "self_ref": "#/texts/31",
+      "self_ref": "#/texts/33",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1341,11 +1430,12 @@
       "text": "AGENCY CUSTOMER ID: YYYYYY-01"
     },
     {
-      "self_ref": "#/texts/32",
+      "self_ref": "#/texts/34",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1367,11 +1457,12 @@
       "text": "CANCEL"
     },
     {
-      "self_ref": "#/texts/33",
+      "self_ref": "#/texts/35",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "section_header",
       "prov": [
         {
@@ -1394,11 +1485,12 @@
       "level": 1
     },
     {
-      "self_ref": "#/texts/34",
+      "self_ref": "#/texts/36",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1420,11 +1512,12 @@
       "text": "INDICATE LINES OF BUSINESS"
     },
     {
-      "self_ref": "#/texts/35",
+      "self_ref": "#/texts/37",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1446,11 +1539,12 @@
       "text": "PREMIUM"
     },
     {
-      "self_ref": "#/texts/36",
+      "self_ref": "#/texts/38",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1472,11 +1566,12 @@
       "text": "PREMIUM"
     },
     {
-      "self_ref": "#/texts/37",
+      "self_ref": "#/texts/39",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1498,11 +1593,12 @@
       "text": "PREMIUM"
     },
     {
-      "self_ref": "#/texts/38",
+      "self_ref": "#/texts/40",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1524,11 +1620,12 @@
       "text": "BOILER & MACHINERY"
     },
     {
-      "self_ref": "#/texts/39",
+      "self_ref": "#/texts/41",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1550,11 +1647,12 @@
       "text": "CYBER AND PRIVACY"
     },
     {
-      "self_ref": "#/texts/40",
+      "self_ref": "#/texts/42",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1576,11 +1674,12 @@
       "text": "YACHT"
     },
     {
-      "self_ref": "#/texts/41",
+      "self_ref": "#/texts/43",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1602,11 +1701,12 @@
       "text": "BUSINESS AUTO"
     },
     {
-      "self_ref": "#/texts/42",
+      "self_ref": "#/texts/44",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1628,11 +1728,12 @@
       "text": "FIDUCIARY LIABILITY"
     },
     {
-      "self_ref": "#/texts/43",
+      "self_ref": "#/texts/45",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1654,11 +1755,12 @@
       "text": "X"
     },
     {
-      "self_ref": "#/texts/44",
+      "self_ref": "#/texts/46",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1680,11 +1782,12 @@
       "text": "Equipment Floater"
     },
     {
-      "self_ref": "#/texts/45",
+      "self_ref": "#/texts/47",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1706,11 +1809,12 @@
       "text": "BUSINESS OWNERS"
     },
     {
-      "self_ref": "#/texts/46",
+      "self_ref": "#/texts/48",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1732,11 +1836,12 @@
       "text": "GARAGE AND DEALERS"
     },
     {
-      "self_ref": "#/texts/47",
+      "self_ref": "#/texts/49",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1758,11 +1863,12 @@
       "text": "X"
     },
     {
-      "self_ref": "#/texts/48",
+      "self_ref": "#/texts/50",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1784,11 +1890,12 @@
       "text": "COMMERCIAL GENERAL LIABILITY"
     },
     {
-      "self_ref": "#/texts/49",
+      "self_ref": "#/texts/51",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1810,11 +1917,12 @@
       "text": "LIQUOR LIABILITY"
     },
     {
-      "self_ref": "#/texts/50",
+      "self_ref": "#/texts/52",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1836,11 +1944,12 @@
       "text": "COMMERCIAL INLAND MARINE"
     },
     {
-      "self_ref": "#/texts/51",
+      "self_ref": "#/texts/53",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1862,11 +1971,12 @@
       "text": "MOTOR CARRIER"
     },
     {
-      "self_ref": "#/texts/52",
+      "self_ref": "#/texts/54",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1888,11 +1998,12 @@
       "text": "X"
     },
     {
-      "self_ref": "#/texts/53",
+      "self_ref": "#/texts/55",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1914,11 +2025,12 @@
       "text": "COMMERCIAL PROPERTY"
     },
     {
-      "self_ref": "#/texts/54",
+      "self_ref": "#/texts/56",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1940,11 +2052,12 @@
       "text": "TRUCKERS"
     },
     {
-      "self_ref": "#/texts/55",
+      "self_ref": "#/texts/57",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1966,11 +2079,12 @@
       "text": "X"
     },
     {
-      "self_ref": "#/texts/56",
+      "self_ref": "#/texts/58",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -1992,11 +2106,12 @@
       "text": "CRIME"
     },
     {
-      "self_ref": "#/texts/57",
+      "self_ref": "#/texts/59",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2018,11 +2133,12 @@
       "text": "X"
     },
     {
-      "self_ref": "#/texts/58",
+      "self_ref": "#/texts/60",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2044,11 +2160,12 @@
       "text": "UMBRELLA"
     },
     {
-      "self_ref": "#/texts/59",
+      "self_ref": "#/texts/61",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "section_header",
       "prov": [
         {
@@ -2071,11 +2188,12 @@
       "level": 1
     },
     {
-      "self_ref": "#/texts/60",
+      "self_ref": "#/texts/62",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2097,11 +2215,12 @@
       "text": "ACCOUNTS RECEIVABLE VALUABLE PAPERS"
     },
     {
-      "self_ref": "#/texts/61",
+      "self_ref": "#/texts/63",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2123,11 +2242,12 @@
       "text": "GLASS AND SIGN SECTION"
     },
     {
-      "self_ref": "#/texts/62",
+      "self_ref": "#/texts/64",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2149,11 +2269,12 @@
       "text": "STATEMENT SCHEDULE OF VALUES"
     },
     {
-      "self_ref": "#/texts/63",
+      "self_ref": "#/texts/65",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2175,11 +2296,12 @@
       "text": "ADDITIONAL INTEREST SCHEDULE"
     },
     {
-      "self_ref": "#/texts/64",
+      "self_ref": "#/texts/66",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2201,11 +2323,12 @@
       "text": "HOTEL MOTEL SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/65",
+      "self_ref": "#/texts/67",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2227,11 +2350,12 @@
       "text": "STATE SUPPLEMENT (If applicable)"
     },
     {
-      "self_ref": "#/texts/66",
+      "self_ref": "#/texts/68",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2253,11 +2377,12 @@
       "text": "ADDITIONAL PREMISES INFORMATION SCHEDULE"
     },
     {
-      "self_ref": "#/texts/67",
+      "self_ref": "#/texts/69",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2279,11 +2404,12 @@
       "text": "INSTALLATION BUILDERS RISK SECTION"
     },
     {
-      "self_ref": "#/texts/68",
+      "self_ref": "#/texts/70",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2305,11 +2431,12 @@
       "text": "VACANT BUILDING SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/69",
+      "self_ref": "#/texts/71",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2331,11 +2458,12 @@
       "text": "APARTMENT BUILDING SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/70",
+      "self_ref": "#/texts/72",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2357,11 +2485,12 @@
       "text": "INTERNATIONAL LIABILITY EXPOSURE SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/71",
+      "self_ref": "#/texts/73",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2383,11 +2512,12 @@
       "text": "VEHICLE SCHEDULE"
     },
     {
-      "self_ref": "#/texts/72",
+      "self_ref": "#/texts/74",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2409,11 +2539,12 @@
       "text": "CONDO ASSN BYLAWS (for D&O Coverage only)"
     },
     {
-      "self_ref": "#/texts/73",
+      "self_ref": "#/texts/75",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2435,11 +2566,12 @@
       "text": "INTERNATIONAL PROPERTY EXPOSURE SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/74",
+      "self_ref": "#/texts/76",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2461,11 +2593,12 @@
       "text": "CONTRACTORS SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/75",
+      "self_ref": "#/texts/77",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2487,11 +2620,12 @@
       "text": "LOSS SUMMARY"
     },
     {
-      "self_ref": "#/texts/76",
+      "self_ref": "#/texts/78",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2513,11 +2647,12 @@
       "text": "COVERAGES SCHEDULE"
     },
     {
-      "self_ref": "#/texts/77",
+      "self_ref": "#/texts/79",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2539,11 +2674,12 @@
       "text": "OPEN CARGO SECTION"
     },
     {
-      "self_ref": "#/texts/78",
+      "self_ref": "#/texts/80",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2565,11 +2701,12 @@
       "text": "DEALERS SECTION"
     },
     {
-      "self_ref": "#/texts/79",
+      "self_ref": "#/texts/81",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2591,11 +2728,12 @@
       "text": "PREMIUM PAYMENT SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/80",
+      "self_ref": "#/texts/82",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2617,11 +2755,12 @@
       "text": "DRIVER INFORMATION SCHEDULE"
     },
     {
-      "self_ref": "#/texts/81",
+      "self_ref": "#/texts/83",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2643,11 +2782,12 @@
       "text": "PROFESSIONAL LIABILITY SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/82",
+      "self_ref": "#/texts/84",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2669,11 +2809,12 @@
       "text": "ELECTRONIC DATA PROCESSING SECTION"
     },
     {
-      "self_ref": "#/texts/83",
+      "self_ref": "#/texts/85",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2695,11 +2836,12 @@
       "text": "RESTAURANT"
     },
     {
-      "self_ref": "#/texts/84",
+      "self_ref": "#/texts/86",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2721,11 +2863,12 @@
       "text": "TAVERN SUPPLEMENT"
     },
     {
-      "self_ref": "#/texts/85",
+      "self_ref": "#/texts/87",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "section_header",
       "prov": [
         {
@@ -2748,11 +2891,12 @@
       "level": 1
     },
     {
-      "self_ref": "#/texts/86",
+      "self_ref": "#/texts/88",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2774,11 +2918,12 @@
       "text": "MINIMUM PREMIUM"
     },
     {
-      "self_ref": "#/texts/87",
+      "self_ref": "#/texts/89",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2800,11 +2945,12 @@
       "text": "PROPOSED EFF DATE PROPOSED EXP DATE"
     },
     {
-      "self_ref": "#/texts/88",
+      "self_ref": "#/texts/90",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2826,11 +2972,12 @@
       "text": "BILLING PLAN"
     },
     {
-      "self_ref": "#/texts/89",
+      "self_ref": "#/texts/91",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2852,11 +2999,12 @@
       "text": "PAYMENT PLAN"
     },
     {
-      "self_ref": "#/texts/90",
+      "self_ref": "#/texts/92",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2878,11 +3026,12 @@
       "text": "METHOD OF PAYMENT"
     },
     {
-      "self_ref": "#/texts/91",
+      "self_ref": "#/texts/93",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2904,11 +3053,12 @@
       "text": "AUDIT"
     },
     {
-      "self_ref": "#/texts/92",
+      "self_ref": "#/texts/94",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2930,11 +3080,12 @@
       "text": "DEPOSIT"
     },
     {
-      "self_ref": "#/texts/93",
+      "self_ref": "#/texts/95",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2956,11 +3107,12 @@
       "text": "POLICY PREMIUM"
     },
     {
-      "self_ref": "#/texts/94",
+      "self_ref": "#/texts/96",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -2982,11 +3134,12 @@
       "text": "01/01/2025"
     },
     {
-      "self_ref": "#/texts/95",
+      "self_ref": "#/texts/97",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3008,11 +3161,12 @@
       "text": "01/01/2026"
     },
     {
-      "self_ref": "#/texts/96",
+      "self_ref": "#/texts/98",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3034,11 +3188,12 @@
       "text": "DIRECT"
     },
     {
-      "self_ref": "#/texts/97",
+      "self_ref": "#/texts/99",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3060,11 +3215,12 @@
       "text": "AGENCY"
     },
     {
-      "self_ref": "#/texts/98",
+      "self_ref": "#/texts/100",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "section_header",
       "prov": [
         {
@@ -3087,11 +3243,12 @@
       "level": 1
     },
     {
-      "self_ref": "#/texts/99",
+      "self_ref": "#/texts/101",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3113,11 +3270,12 @@
       "text": "NAME (First Named Insured) AND MAILING ADDRESS (including ZIP+4) Andy Applegate, Inc. Po Box 2370 Newton; MA 01605-0370"
     },
     {
-      "self_ref": "#/texts/100",
+      "self_ref": "#/texts/102",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3139,11 +3297,12 @@
       "text": "GL CODE"
     },
     {
-      "self_ref": "#/texts/101",
+      "self_ref": "#/texts/103",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3165,11 +3324,12 @@
       "text": "SIC"
     },
     {
-      "self_ref": "#/texts/102",
+      "self_ref": "#/texts/104",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3191,11 +3351,12 @@
       "text": "NAICS"
     },
     {
-      "self_ref": "#/texts/103",
+      "self_ref": "#/texts/105",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3217,11 +3378,12 @@
       "text": "FEIN OR SOC SEC #"
     },
     {
-      "self_ref": "#/texts/104",
+      "self_ref": "#/texts/106",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3243,11 +3405,12 @@
       "text": "3599"
     },
     {
-      "self_ref": "#/texts/105",
+      "self_ref": "#/texts/107",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3269,11 +3432,12 @@
       "text": "333120"
     },
     {
-      "self_ref": "#/texts/106",
+      "self_ref": "#/texts/108",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3295,11 +3459,12 @@
       "text": "BUSINESS PHONE #: (800) 899-2113"
     },
     {
-      "self_ref": "#/texts/107",
+      "self_ref": "#/texts/109",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3321,11 +3486,12 @@
       "text": "WEBSITE ADDRESS"
     },
     {
-      "self_ref": "#/texts/108",
+      "self_ref": "#/texts/110",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3347,11 +3513,12 @@
       "text": "CORPORATION"
     },
     {
-      "self_ref": "#/texts/109",
+      "self_ref": "#/texts/111",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3373,11 +3540,12 @@
       "text": "JOINT VENTURE"
     },
     {
-      "self_ref": "#/texts/110",
+      "self_ref": "#/texts/112",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3399,11 +3567,12 @@
       "text": "NOT FOR PROFIT ORG"
     },
     {
-      "self_ref": "#/texts/111",
+      "self_ref": "#/texts/113",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3425,11 +3594,12 @@
       "text": "SUBCHAPTER \"S\" CORPORATION"
     },
     {
-      "self_ref": "#/texts/112",
+      "self_ref": "#/texts/114",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "checkbox_selected",
       "prov": [
         {
@@ -3451,11 +3621,12 @@
       "text": "X S Corporation"
     },
     {
-      "self_ref": "#/texts/113",
+      "self_ref": "#/texts/115",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3477,11 +3648,12 @@
       "text": "NO. OF MEMBERS"
     },
     {
-      "self_ref": "#/texts/114",
+      "self_ref": "#/texts/116",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3503,11 +3675,12 @@
       "text": "INDIVIDUAL"
     },
     {
-      "self_ref": "#/texts/115",
+      "self_ref": "#/texts/117",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3529,11 +3702,12 @@
       "text": "LLC"
     },
     {
-      "self_ref": "#/texts/116",
+      "self_ref": "#/texts/118",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3555,11 +3729,12 @@
       "text": "AND MANAGERS"
     },
     {
-      "self_ref": "#/texts/117",
+      "self_ref": "#/texts/119",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3581,11 +3756,12 @@
       "text": "PARTNERSHIP"
     },
     {
-      "self_ref": "#/texts/118",
+      "self_ref": "#/texts/120",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3607,11 +3783,12 @@
       "text": "TRUST"
     },
     {
-      "self_ref": "#/texts/119",
+      "self_ref": "#/texts/121",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3633,11 +3810,12 @@
       "text": "NAME (Other Named Insured) AND MAILING ADDRESS (including ZIP+4) Legal Andy Applegate, LLC"
     },
     {
-      "self_ref": "#/texts/120",
+      "self_ref": "#/texts/122",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3659,11 +3837,12 @@
       "text": "GL CODE"
     },
     {
-      "self_ref": "#/texts/121",
+      "self_ref": "#/texts/123",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3685,11 +3864,12 @@
       "text": "SIC"
     },
     {
-      "self_ref": "#/texts/122",
+      "self_ref": "#/texts/124",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3711,11 +3891,12 @@
       "text": "NAICS"
     },
     {
-      "self_ref": "#/texts/123",
+      "self_ref": "#/texts/125",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3737,11 +3918,12 @@
       "text": "FEIN OR SOC SEC #"
     },
     {
-      "self_ref": "#/texts/124",
+      "self_ref": "#/texts/126",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3763,11 +3945,12 @@
       "text": "BUSINESS PHONE #:"
     },
     {
-      "self_ref": "#/texts/125",
+      "self_ref": "#/texts/127",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3789,11 +3972,12 @@
       "text": "WEBSITE ADDRESS"
     },
     {
-      "self_ref": "#/texts/126",
+      "self_ref": "#/texts/128",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3815,11 +3999,12 @@
       "text": "CORPORATION INDIVIDUAL"
     },
     {
-      "self_ref": "#/texts/127",
+      "self_ref": "#/texts/129",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3841,11 +4026,12 @@
       "text": "JOINT VENTURE"
     },
     {
-      "self_ref": "#/texts/128",
+      "self_ref": "#/texts/130",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3867,11 +4053,12 @@
       "text": "NOT FOR PROFIT ORG PARTNERSHIP"
     },
     {
-      "self_ref": "#/texts/129",
+      "self_ref": "#/texts/131",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3893,11 +4080,12 @@
       "text": "SUBCHAPTER \"S\" CORPORATION"
     },
     {
-      "self_ref": "#/texts/130",
+      "self_ref": "#/texts/132",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3919,11 +4107,12 @@
       "text": "NO. OF MEMBERS LLC"
     },
     {
-      "self_ref": "#/texts/131",
+      "self_ref": "#/texts/133",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3945,11 +4134,12 @@
       "text": "AND MANAGERS:"
     },
     {
-      "self_ref": "#/texts/132",
+      "self_ref": "#/texts/134",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "checkbox_unselected",
       "prov": [
         {
@@ -3971,11 +4161,12 @@
       "text": "TRUST"
     },
     {
-      "self_ref": "#/texts/133",
+      "self_ref": "#/texts/135",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -3997,11 +4188,12 @@
       "text": "NAME (Other Named Insured) AND MAILING ADDRESS (including ZIP"
     },
     {
-      "self_ref": "#/texts/134",
+      "self_ref": "#/texts/136",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4023,11 +4215,12 @@
       "text": "Legal"
     },
     {
-      "self_ref": "#/texts/135",
+      "self_ref": "#/texts/137",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4049,11 +4242,12 @@
       "text": "GL CODE"
     },
     {
-      "self_ref": "#/texts/136",
+      "self_ref": "#/texts/138",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4075,11 +4269,12 @@
       "text": "SIC"
     },
     {
-      "self_ref": "#/texts/137",
+      "self_ref": "#/texts/139",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4101,11 +4296,12 @@
       "text": "NAICS"
     },
     {
-      "self_ref": "#/texts/138",
+      "self_ref": "#/texts/140",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4127,11 +4323,12 @@
       "text": "FEIN OR SOC SEC #"
     },
     {
-      "self_ref": "#/texts/139",
+      "self_ref": "#/texts/141",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4153,11 +4350,12 @@
       "text": "+4)"
     },
     {
-      "self_ref": "#/texts/140",
+      "self_ref": "#/texts/142",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4179,11 +4377,12 @@
       "text": "Andrew Holdings, LLC"
     },
     {
-      "self_ref": "#/texts/141",
+      "self_ref": "#/texts/143",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4205,11 +4404,12 @@
       "text": "BUSINESS PHONE #:"
     },
     {
-      "self_ref": "#/texts/142",
+      "self_ref": "#/texts/144",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4231,11 +4431,12 @@
       "text": "WEBSITE ADDRESS"
     },
     {
-      "self_ref": "#/texts/143",
+      "self_ref": "#/texts/145",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4257,11 +4458,12 @@
       "text": "CORPORATION INDIVIDUAL"
     },
     {
-      "self_ref": "#/texts/144",
+      "self_ref": "#/texts/146",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4283,11 +4485,12 @@
       "text": "JOINT VENTURE"
     },
     {
-      "self_ref": "#/texts/145",
+      "self_ref": "#/texts/147",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4309,11 +4512,12 @@
       "text": "NOT FOR PROFIT ORG"
     },
     {
-      "self_ref": "#/texts/146",
+      "self_ref": "#/texts/148",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4335,11 +4539,12 @@
       "text": "SUBCHAPTER \"S\" CORPORATION"
     },
     {
-      "self_ref": "#/texts/147",
+      "self_ref": "#/texts/149",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4361,11 +4566,12 @@
       "text": "LLC NO: OF MEMBERS"
     },
     {
-      "self_ref": "#/texts/148",
+      "self_ref": "#/texts/150",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4387,11 +4593,12 @@
       "text": "PARTNERSHIP"
     },
     {
-      "self_ref": "#/texts/149",
+      "self_ref": "#/texts/151",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4413,11 +4620,12 @@
       "text": "TRUST"
     },
     {
-      "self_ref": "#/texts/150",
+      "self_ref": "#/texts/152",
       "parent": {
         "$ref": "#/groups/0"
       },
       "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
@@ -4439,45 +4647,20 @@
       "text": "AND MANAGERS"
     },
     {
-      "self_ref": "#/texts/151",
+      "self_ref": "#/texts/153",
       "parent": {
         "$ref": "#/body"
       },
       "children": [],
-      "label": "page_footer",
-      "prov": [
-        {
-          "page_no": 1,
-          "bbox": {
-            "l": 21.33333396911621,
-            "t": 38.66666793823242,
-            "r": 108.66666412353516,
-            "b": 28.0,
-            "coord_origin": "BOTTOMLEFT"
-          },
-          "charspan": [
-            0,
-            19
-          ]
-        }
-      ],
-      "orig": "ACORD 125 (2016/03)",
-      "text": "ACORD 125 (2016/03)"
-    },
-    {
-      "self_ref": "#/texts/152",
-      "parent": {
-        "$ref": "#/body"
-      },
-      "children": [],
+      "content_layer": "body",
       "label": "text",
       "prov": [
         {
           "page_no": 1,
           "bbox": {
-            "l": 274.3333435058594,
-            "t": 39.66666793823242,
-            "r": 321.3333435058594,
+            "l": 274.3333333333333,
+            "t": 39.66666666666663,
+            "r": 321.3333333333333,
             "b": 27.0,
             "coord_origin": "BOTTOMLEFT"
           },
@@ -4491,19 +4674,47 @@
       "text": "Page of 4"
     },
     {
-      "self_ref": "#/texts/153",
+      "self_ref": "#/texts/154",
       "parent": {
         "$ref": "#/body"
       },
       "children": [],
+      "content_layer": "furniture",
       "label": "page_footer",
       "prov": [
         {
           "page_no": 1,
           "bbox": {
-            "l": 365.3333435058594,
+            "l": 21.333333333333332,
+            "t": 38.66666666666663,
+            "r": 108.66666666666667,
+            "b": 28.0,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            19
+          ]
+        }
+      ],
+      "orig": "ACORD 125 (2016/03)",
+      "text": "ACORD 125 (2016/03)"
+    },
+    {
+      "self_ref": "#/texts/155",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "furniture",
+      "label": "page_footer",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 365.3333333333333,
             "t": 39.0,
-            "r": 587.6666870117188,
+            "r": 587.6666666666666,
             "b": 27.0,
             "coord_origin": "BOTTOMLEFT"
           },
@@ -4517,20 +4728,21 @@
       "text": "1993-2015 ACORD CORPORATION. All rights reserved."
     },
     {
-      "self_ref": "#/texts/154",
+      "self_ref": "#/texts/156",
       "parent": {
         "$ref": "#/body"
       },
       "children": [],
+      "content_layer": "furniture",
       "label": "page_footer",
       "prov": [
         {
           "page_no": 1,
           "bbox": {
-            "l": 179.3333282470703,
-            "t": 27.945819854736328,
-            "r": 419.6666564941406,
-            "b": 14.054179191589355,
+            "l": 179.33333333333334,
+            "t": 27.945820668761712,
+            "r": 419.6666666666667,
+            "b": 14.054179331238288,
             "coord_origin": "BOTTOMLEFT"
           },
           "charspan": [
@@ -4541,58 +4753,6 @@
       ],
       "orig": "The ACORD name and are registered marks of ACORD logo",
       "text": "The ACORD name and are registered marks of ACORD logo"
-    },
-    {
-      "self_ref": "#/texts/155",
-      "parent": {
-        "$ref": "#/body"
-      },
-      "children": [],
-      "label": "text",
-      "prov": [
-        {
-          "page_no": 1,
-          "bbox": {
-            "l": 555.3333129882812,
-            "t": 766.6666870117188,
-            "r": 596.0,
-            "b": 756.6666870117188,
-            "coord_origin": "BOTTOMLEFT"
-          },
-          "charspan": [
-            0,
-            6
-          ]
-        }
-      ],
-      "orig": "JMAHON",
-      "text": "JMAHON"
-    },
-    {
-      "self_ref": "#/texts/156",
-      "parent": {
-        "$ref": "#/body"
-      },
-      "children": [],
-      "label": "text",
-      "prov": [
-        {
-          "page_no": 1,
-          "bbox": {
-            "l": 520.6666870117188,
-            "t": 751.3333129882812,
-            "r": 581.3333129882812,
-            "b": 743.3333129882812,
-            "coord_origin": "BOTTOMLEFT"
-          },
-          "charspan": [
-            0,
-            17
-          ]
-        }
-      ],
-      "orig": "DATE (MMIDDIYYYY)",
-      "text": "DATE (MMIDDIYYYY)"
     }
   ],
   "pictures": [
@@ -4606,15 +4766,16 @@
           "$ref": "#/texts/0"
         }
       ],
+      "content_layer": "body",
       "label": "picture",
       "prov": [
         {
           "page_no": 1,
           "bbox": {
             "l": 20.63056755065918,
-            "t": 768.3179931640625,
+            "t": 768.3180084228516,
             "r": 136.74563598632812,
-            "b": 733.333984375,
+            "b": 733.3339653015137,
             "coord_origin": "BOTTOMLEFT"
           },
           "charspan": [
@@ -4631,6 +4792,7 @@
   ],
   "tables": [],
   "key_value_items": [],
+  "form_items": [],
   "pages": {
     "1": {
       "size": {

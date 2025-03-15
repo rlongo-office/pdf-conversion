@@ -17,13 +17,14 @@ def read_prompt_file(prompt_path: Path) -> str:
         raise FileNotFoundError(f"Prompt file not found: {prompt_path}")
     return prompt_path.read_text().strip()
 
+"""
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Process PDF and send to Watsonx.ai')
     parser.add_argument('pdf_path', type=str, help='Path to the PDF file')
     parser.add_argument('--output-dir', type=str, default='output', help='Output directory')
     parser.add_argument('--prompt-file', type=str, required=True, help='Path to file containing the prompt')
-    parser.add_argument('--model', type=str, default='ibm/granite-13b-instruct-v2', help='WatsonX model ID to use')
+    parser.add_argument('--model', type=str, default='mistralai/mixtral-8x7b-instruct-v01', help='WatsonX model ID to use')
     args = parser.parse_args()
 
     # Load environment variables
@@ -58,6 +59,59 @@ def main():
         # Step 2: Send to Watsonx.ai
         response = send_to_watsonx(text_path, prompt, "mistralai/mixtral-8x7b-instruct-v01")
         # print("The Final response", response)
+    except Exception as e:
+        print(f"Error processing document: {e}")
+        raise
+"""
+
+def main():
+    # Get script directory
+    script_dir = Path(__file__).parent
+
+    # Set default paths
+    default_pdf_path = script_dir.parent / "tests" / "data" / "first_page.pdf"
+    #default_prompt_path = script_dir.parent / "tests" / "data" / "simple_prompt.txt"
+    default_prompt_path = script_dir.parent / "tests" / "data" / "explicit_exclusion.txt"
+
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Process PDF and send to Watsonx.ai')
+    parser.add_argument('pdf_path', nargs='?', default=str(default_pdf_path), help='Path to the PDF file')
+    parser.add_argument('--output-dir', type=str, default='output', help='Output directory')
+    parser.add_argument('--prompt-file', type=str, default=str(default_prompt_path), help='Path to file containing the prompt')
+    parser.add_argument('--model', type=str, default='mistralai/mixtral-8x7b-instruct-v01', help='WatsonX model ID to use')
+
+    args = parser.parse_args()
+
+    # Load environment variables
+    load_dotenv()
+
+    # Convert string paths to Path objects
+    pdf_path = Path(args.pdf_path)
+    output_dir = Path(args.output_dir)
+    prompt_path = Path(args.prompt_file)
+
+    # Validate input files
+    if not pdf_path.exists():
+        raise FileNotFoundError(f"PDF file not found: {pdf_path}")
+    
+    if not prompt_path.exists():
+        raise FileNotFoundError(f"Prompt file not found: {prompt_path}")
+
+    # Read prompt from file
+    prompt = read_prompt_file(prompt_path)
+
+    # Ensure output directory exists
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        # Step 1: Extract content
+        extracted_files = extract_content(pdf_path, output_dir)
+        text_path = extracted_files["text_path"]  # Use text output
+
+        print("text_path: ", text_path)
+        
+        # Step 2: Send to Watsonx.ai
+        response = send_to_watsonx(text_path, prompt, args.model)
     except Exception as e:
         print(f"Error processing document: {e}")
         raise

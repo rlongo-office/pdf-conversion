@@ -48,7 +48,7 @@ def send_to_watsonx(text_path: Path, prompt: str, model_id: str = "mistralai/mix
         GenParams.MAX_NEW_TOKENS: 1000,
         GenParams.MIN_NEW_TOKENS: 50,
         GenParams.TEMPERATURE: 0.1,
-        GenParams.REPETITION_PENALTY: 1.2
+        GenParams.REPETITION_PENALTY: 1.1
     }
 
     credentials = {
